@@ -1,5 +1,7 @@
 # 四层架构详解
 
+![Sleep Memory 架构图](../assets/architecture.svg)
+
 ## 设计原则
 
 1. **Context 是 RAM，不是硬盘** — 只放当前任务需要的片段。

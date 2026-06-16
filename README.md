@@ -1,19 +1,14 @@
 # Sleep Memory · 睡眠记忆
 
+<p align="center">
+  <img src="docs/assets/architecture.svg" alt="Sleep Memory 四层架构：WAKE 在线推理与 SLEEP 离线巩固" width="820">
+</p>
+
 > **不用等模型内置「睡眠」，在系统层给 Agent 装上可检索的长期记忆。**
 
 灵感来自论文 [*Language Models Need Sleep*](https://arxiv.org/abs/2605.26099)（2026）：长程 Agent 若只在 context 里堆 token，会越来越慢、越来越贵；论文提出 **离线巩固 → 写入固定大小记忆 → 清空短期 cache**。
 
 本项目把同一思路落在 **Cursor / Claude Code 等 Agent IDE** 上，用你已有的工具拼出四层记忆，不改模型权重。
-
-```
-在线推理（L1）          缺信息时检索（L2）
-      │                        │
-      ▼                        ▼
-  当前 context  ──睡前──▶  Obsidian 巩固（L3）
-      │                        │
-      └──── 短事实 ──────────▶ Memory MCP（L4）
-```
 
 ## 为什么有用
 
