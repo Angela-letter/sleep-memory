@@ -1,0 +1,13 @@
+flowchart TB
+  subgraph internal [模型内化 · 难审计]
+    P[论文 fast-weights]
+    U[整库上传云端]
+  end
+  subgraph external [系统外挂 · 可审计]
+    SM[Sleep Memory<br/>Markdown + 索引 + 人审]
+    MG[MemGPT 分页<br/>服务内记忆]
+    RAG[传统 RAG<br/>向量堆料]
+  end
+  P -.->|理论灵感| SM
+  MG -.->|可并存| SM
+  RAG -.->|L2 可替换| SM

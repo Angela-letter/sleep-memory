@@ -1,0 +1,9 @@
+stateDiagram-v2
+  [*] --> Wake: daytime agent work
+  Wake --> Nightly: end-of-day recap
+  Wake --> Consolidate: context nearly full
+  Wake --> Recall: ask about the past
+  Nightly --> Sleep: write L3 + L4 + curated
+  Consolidate --> Sleep: write session archive
+  Recall --> Wake: search L2/L3 then answer
+  Sleep --> Wake: new session + recap links

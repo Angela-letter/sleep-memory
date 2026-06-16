@@ -1,0 +1,17 @@
+flowchart LR
+  subgraph pain [Common pain points]
+    A[Context bloat: slow and costly]
+    B[Memory locked in one chat]
+    C[Files scattered across disks]
+    D[Hallucinations in long-term memory]
+  end
+  subgraph fix [Sleep Memory]
+    E[consolidate archive]
+    F[L0 scan all sessions]
+    G[L2 discovery + L2b curated shelf]
+    H[Human review gate]
+  end
+  A --> E
+  B --> F
+  C --> G
+  D --> H

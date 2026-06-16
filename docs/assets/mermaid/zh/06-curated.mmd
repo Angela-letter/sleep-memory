@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph discover [发现 L2]
+    A[Gety 全盘 / Recoll / 云盘挂载]
+  end
+  subgraph shelf [货架 L2b + L3b]
+    B[inbox/ 待归档]
+    C[专题/_index.md 地图]
+    D[sources/ 可选硬链接]
+  end
+  subgraph time [时间 L3]
+    E[日复盘 ## 精选库]
+  end
+  A -->|高价值命中| B
+  B --> C
+  C --> D
+  B --> E

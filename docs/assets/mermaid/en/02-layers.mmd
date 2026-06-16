@@ -1,0 +1,18 @@
+flowchart TB
+  subgraph wake [WAKE · online]
+    L0[L0 Session scan<br/>cross-project agent logs]
+    L1[L1 Working memory<br/>current context]
+    L2[L2 Hot retrieval<br/>full-disk discovery]
+    L2b[L2b Topic retrieval<br/>curated library connector]
+  end
+  subgraph sleep [SLEEP · offline consolidation]
+    L3[L3 Consolidation notes<br/>daily review / session archive]
+    L3b[L3b Topic map<br/>_index.md per topic]
+    L4[L4 Entity facts<br/>short fact cards]
+  end
+  L0 --> L3
+  L1 -.->|context full| L3
+  L2 --> L2b
+  L2b --> L3b
+  L3 --> L4
+  L3b -.->|path refs| L2

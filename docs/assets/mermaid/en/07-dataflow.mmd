@@ -1,0 +1,35 @@
+flowchart TB
+  subgraph inputs [Inputs]
+    T[Agent transcripts L0]
+    O[Obsidian / note edits]
+    Y[Yuque / Lark / clippings]
+    F[Local disks L2]
+    CD[CloudDrive mounts]
+  end
+  subgraph core [Sleep Memory core]
+    N[nightly synthesis]
+    G[human review gate]
+  end
+  subgraph outputs [Portable assets]
+    R[daily review md]
+    S[session archive md]
+    I[topic _index md]
+    M[Memory entities]
+  end
+  subgraph agents [Any agent wake-up]
+    AG[Cursor / Claude / Codex / ...]
+  end
+  T --> N
+  O --> N
+  Y --> N
+  F --> I
+  CD --> F
+  N --> G
+  G --> R
+  G --> S
+  G --> M
+  N --> I
+  R --> AG
+  I --> AG
+  M --> AG
+  F --> AG

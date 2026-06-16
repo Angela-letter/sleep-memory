@@ -1,0 +1,17 @@
+flowchart LR
+  subgraph pain [常见痛点]
+    A[Context 爆满变慢变贵]
+    B[只记得当前 chat]
+    C[资料散在 10 个目录]
+    D[Agent 幻觉写进长期记忆]
+  end
+  subgraph fix [Sleep Memory]
+    E[consolidate 归档]
+    F[L0 扫全天会话]
+    G[L2 发现 + L2b 专题货架]
+    H[待你确认 人审闸门]
+  end
+  A --> E
+  B --> F
+  C --> G
+  D --> H

@@ -1,0 +1,13 @@
+flowchart TD
+  S1[Step 1 Set date] --> S2[Step 2 L0 scan agent-transcripts]
+  S2 --> S3[Step 3 Collect Obsidian / bookmarks / Yuque]
+  S3 --> S4[Step 4 Calendar API optional]
+  S4 --> S5[Step 5 L2 Gety activity supplement]
+  S5 --> S6[Step 6 Synthesize Markdown]
+  S6 --> S7{Suspicious content?}
+  S7 -->|yes| P[## Pending your review]
+  S7 -->|no| S8[Step 7 L4 Memory facts]
+  P --> S8
+  S8 --> S9[Step 8 Report + curated section]
+  S6 --> CUR[## Curated inbox update]
+  CUR --> S8

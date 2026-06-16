@@ -1,0 +1,9 @@
+stateDiagram-v2
+  [*] --> Wake: 白天 Agent 工作
+  Wake --> Nightly: 睡前复盘
+  Wake --> Consolidate: Context 将满
+  Wake --> Recall: 问旧事
+  Nightly --> Sleep: 写 L3 + L4 + 精选库
+  Consolidate --> Sleep: 写会话巩固
+  Recall --> Wake: 搜 L2/L3 后回答
+  Sleep --> Wake: 新会话 + recap 链接

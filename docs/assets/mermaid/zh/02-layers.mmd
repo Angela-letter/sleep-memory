@@ -1,0 +1,18 @@
+flowchart TB
+  subgraph wake [WAKE · 在线]
+    L0[L0 会话扫描<br/>跨项目/跨 Agent 日志]
+    L1[L1 工作记忆<br/>当前 Context]
+    L2[L2 热检索<br/>全盘发现]
+    L2b[L2b 专题检索<br/>精选库 connector]
+  end
+  subgraph sleep [SLEEP · 离线巩固]
+    L3[L3 巩固笔记<br/>按日：日复盘/会话巩固]
+    L3b[L3b 专题地图<br/>按主题：_index.md]
+    L4[L4 实体事实<br/>短事实卡片]
+  end
+  L0 --> L3
+  L1 -.->|context 满| L3
+  L2 --> L2b
+  L2b --> L3b
+  L3 --> L4
+  L3b -.->|路径引用| L2

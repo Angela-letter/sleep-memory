@@ -1,0 +1,13 @@
+flowchart TB
+  subgraph internal [In-model · hard to audit]
+    P[Paper fast-weights]
+    U[Upload entire library to cloud]
+  end
+  subgraph external [System layer · auditable]
+    SM[Sleep Memory<br/>Markdown + index + human review]
+    MG[MemGPT paging<br/>in-service memory]
+    RAG[Classic RAG<br/>vector dump]
+  end
+  P -.->|theory| SM
+  MG -.->|coexist| SM
+  RAG -.->|L2 swappable| SM

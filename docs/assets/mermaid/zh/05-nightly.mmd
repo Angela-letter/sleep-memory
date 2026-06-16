@@ -1,0 +1,13 @@
+flowchart TD
+  S1[Step 1 确定日期] --> S2[Step 2 L0 扫 agent-transcripts]
+  S2 --> S3[Step 3 采集 Obsidian/书签/语雀增量]
+  S3 --> S4[Step 4 日程 API 可选]
+  S4 --> S5[Step 5 L2 Gety 今日活动补充]
+  S5 --> S6[Step 6 合成 Markdown]
+  S6 --> S7{可疑内容?}
+  S7 -->|是| P[## 待你确认]
+  S7 -->|否| S8[Step 7 L4 Memory 短事实]
+  P --> S8
+  S8 --> S9[Step 8 汇报 + 精选库一节]
+  S6 --> CUR[## 精选库 inbox 更新]
+  CUR --> S8

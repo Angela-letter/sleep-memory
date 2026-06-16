@@ -1,0 +1,35 @@
+flowchart TB
+  subgraph inputs [输入源]
+    T[Agent transcripts L0]
+    O[Obsidian / 笔记改动]
+    Y[语雀 / 飞书 / 剪藏]
+    F[本地文件盘 L2]
+    CD[CloudDrive 等挂载盘]
+  end
+  subgraph core [Sleep Memory 核心]
+    N[nightly 合成]
+    G[待你确认 闸门]
+  end
+  subgraph outputs [可迁移资产]
+    R[日复盘 md]
+    S[会话巩固 md]
+    I[专题 _index md]
+    M[Memory 实体]
+  end
+  subgraph agents [任意 Agent 唤醒]
+    AG[Cursor / Claude / Codex / ...]
+  end
+  T --> N
+  O --> N
+  Y --> N
+  F --> I
+  CD --> F
+  N --> G
+  G --> R
+  G --> S
+  G --> M
+  N --> I
+  R --> AG
+  I --> AG
+  M --> AG
+  F --> AG

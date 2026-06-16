@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph discover [Discovery L2]
+    A[Gety / Recoll / mounted cloud drives]
+  end
+  subgraph shelf [Shelf L2b + L3b]
+    B[inbox/ to triage]
+    C[topic/_index.md map]
+    D[sources/ optional hard links]
+  end
+  subgraph time [Time axis L3]
+    E[daily review ## curated]
+  end
+  A -->|high-value hit| B
+  B --> C
+  C --> D
+  B --> E

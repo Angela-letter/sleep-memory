@@ -15,9 +15,16 @@
 
 ## L2 热检索
 
-- 载体：Gety CLI / MCP
+- 载体：Gety CLI / MCP（**全盘**）
 - 约定：关键词 query、Top 5、`--update-time-from` 过滤今日
 - 始终 cite 文件路径
+
+## L2b 专题检索（精选库）
+
+- 根路径：`$CURATED_LIBRARY_ROOT`（或 `CURATED_LIBRARY_ROOT`）
+- Gety：`gety connector add … --name "Folder: 精选库"`
+- 顺序：读 `{专题}/_index.md` → `gety search -c "Folder: 精选库"` → 不足再 L2 全盘
+- 详见 [curated-library-workflow.md](../docs/curated-library-workflow.md)
 
 ## L3 巩固笔记
 
@@ -26,6 +33,12 @@
 会话巩固/*.md
 手机录音/YYYY-MM/*.md   # 可选
 ```
+
+## L3b 专题地图（精选库）
+
+- 路径：`{CURATED_LIBRARY_ROOT}/{专题}/_index.md`
+- 按**主题**索引权威原件；与 L3 **按日**复盘互补
+- 模板：[curated-index-template.md](curated-index-template.md)
 
 ## L4 实体事实
 

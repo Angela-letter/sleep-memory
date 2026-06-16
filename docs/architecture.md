@@ -42,18 +42,19 @@ Cursor 每个项目有独立 `agent-transcripts/`。若 nightly 只看当前 cha
 
 启用过多 Skill 会挤占推理空间 → 用 **skill-archive-router** 类方案：常用常驻，冷门归档到 Gety。
 
-## L2：热检索（Gety）
+## L2：热检索（Gety 全盘）
 
 触发：`recall` 模式，或 nightly 前查「这周是否写过类似笔记」。
 
-```
-用户问「上周嵌入式环境怎么配的？」
-  → Gety search "嵌入式 环境"
-  → 取 top 3 片段注入 context
-  → 回答并附 Obsidian 链接
-```
-
 **不要**把 Gety 索引里所有命中一次性塞进 prompt。
+
+## L2b：专题热检索（精选库）
+
+载体：`CURATED_LIBRARY_ROOT` + Gety connector `Folder: 精选库`
+
+Agent 顺序：读 `{专题}/_index.md` → `gety search -c "Folder: 精选库"` → 不足再 L2 全盘。
+
+详见 [curated-library-workflow.md](curated-library-workflow.md)。
 
 ## L3：巩固笔记（Obsidian）
 
@@ -68,6 +69,10 @@ Cursor 每个项目有独立 `agent-transcripts/`。若 nightly 只看当前 cha
 ```
 
 日复盘是 **人可读叙事** + **机器可检索** 的交汇点。Dataview / MOC 可做二级索引。
+
+## L3b：专题地图（精选库）
+
+目录：`{CURATED_LIBRARY_ROOT}/{专题}/_index.md` — 按**主题**记录权威原件路径、章→考点→题型。与 L3 **按日**复盘互补；Gety 可替换，精选库文件夹仍在。
 
 ## L4：实体事实（Memory MCP）
 
