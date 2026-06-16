@@ -34,7 +34,7 @@ argument-hint: "[nightly|consolidate|recall] [optional date YYYY-MM-DD]"
 | 变量 | 默认 |
 |------|------|
 | `OBSIDIAN_VAULT` | `~/Obsidian` |
-| `CURATED_LIBRARY_ROOT` | `$CURATED_LIBRARY_ROOT` |
+| `CURATED_LIBRARY_ROOT` | `~/curated-library`（个人路径仅放环境变量，勿写进公开仓库） |
 | 日复盘 | `{vault}/日复盘/YYYY/YYYY-MM-DD.md` |
 | 会话巩固 | `{vault}/会话巩固/YYYY-MM-DD-{slug}.md` |
 | 手机录音摘要 | `{vault}/手机录音/YYYY-MM/`（可选流水线） |

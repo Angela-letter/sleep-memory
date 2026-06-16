@@ -21,7 +21,7 @@
 
 ## L2b 专题检索（精选库）
 
-- 根路径：`$CURATED_LIBRARY_ROOT`（或 `CURATED_LIBRARY_ROOT`）
+- 根路径：`$CURATED_LIBRARY_ROOT`（默认 `~/curated-library`）
 - Gety：`gety connector add … --name "Folder: 精选库"`
 - 顺序：读 `{专题}/_index.md` → `gety search -c "Folder: 精选库"` → 不足再 L2 全盘
 - 详见 [curated-library-workflow.md](../docs/curated-library-workflow.md)

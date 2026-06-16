@@ -62,7 +62,7 @@ energy:
 
 ## 精选库
 
-> 今日是否向专题货架入库？无则写「无」。路径默认根：`$CURATED_LIBRARY_ROOT`
+> 今日是否向专题货架入库？无则写「无」。路径默认根：`$CURATED_LIBRARY_ROOT`（本地环境变量）
 
 - **inbox / 新索引**：{放入 inbox 的文件或更新的 `_index.md` 路径}
 - **专题**：{如 example-topic}

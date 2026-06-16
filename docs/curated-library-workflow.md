@@ -23,7 +23,7 @@ sleep-memory 原四层：
 
 ```
          ┌─────────────────────────────────────────┐
-         │  L2  Gety 全盘（E:/D:/C:、CloudDrive）   │  找得到
+         │  L2  Gety 全盘（各盘符、CloudDrive 等）   │  找得到
          └──────────────────┬──────────────────────┘
                             │ 命中高价值
                             ▼
@@ -40,19 +40,19 @@ sleep-memory 原四层：
 
 ## 二、目录与默认路径
 
-| 项目 | 默认路径 |
-|------|----------|
-| 精选库根 | `$CURATED_LIBRARY_ROOT\` |
-| 待归档 | `$CURATED_LIBRARY_ROOT\inbox\` |
-| 模电专题 | `$CURATED_LIBRARY_ROOT\example-topic\` |
-| Obsidian 复盘 | `$OBSIDIAN_VAULT\日复盘\` |
-| sleep-memory 仓库 | `sleep-memory (local clone)\` |
+| 项目 | 示例路径（请用环境变量覆盖） |
+|------|------------------------------|
+| 精选库根 | `$CURATED_LIBRARY_ROOT` 或 `~/curated-library/` |
+| 待归档 | `$CURATED_LIBRARY_ROOT/inbox/` |
+| 示例专题 | `$CURATED_LIBRARY_ROOT/example-topic/` |
+| Obsidian 复盘 | `$OBSIDIAN_VAULT/日复盘/` |
+| sleep-memory 仓库 | 本仓库 clone 路径 |
 
-可用环境变量覆盖（建议写入个人 `.env` 或 Memory MCP）：
+可用环境变量覆盖（建议写入个人 `.env` 或 Memory MCP，**勿提交到 Git**）：
 
 ```bash
-CURATED_LIBRARY_ROOT=$CURATED_LIBRARY_ROOT
-OBSIDIAN_VAULT=$OBSIDIAN_VAULT
+export CURATED_LIBRARY_ROOT="$HOME/curated-library"
+export OBSIDIAN_VAULT="$HOME/Obsidian"
 ```
 
 ## 三、首次搭建（一次性，约 15 分钟）
@@ -60,19 +60,19 @@ OBSIDIAN_VAULT=$OBSIDIAN_VAULT
 ### 1. 创建目录（已完成可跳过）
 
 ```
-$CURATED_LIBRARY_ROOT\
+$CURATED_LIBRARY_ROOT/
 ├── README.md
 ├── _MOC.md
-├── templates\
-├── inbox\
-└── example-topic\
+├── templates/
+├── inbox/
+└── example-topic/
     └── _index.md
 ```
 
 ### 2. 注册 Gety 连接器
 
 ```powershell
-gety connector add "$CURATED_LIBRARY_ROOT" --name "Folder: 精选库"
+gety connector add "$env:CURATED_LIBRARY_ROOT" --name "Folder: 精选库"
 gety connector list
 ```
 
@@ -80,7 +80,7 @@ gety connector list
 
 ### 3. 种子专题索引
 
-已预填 `example-topic/_index.md`（指向你现有 D/E/C 盘与 Obsidian 路径）。  
+在 `example-topic/_index.md` 填「权威原件路径表」。  
 **不必立刻搬家**——索引表记录「权威原件在哪」即可。
 
 ### 4. Memory MCP（可选）
@@ -88,7 +88,7 @@ gety connector list
 写入一条实体事实，方便跨会话 recall：
 
 - 实体：`精选库`
-- 观察：`根路径 $CURATED_LIBRARY_ROOT；模电索引 example-topic/_index.md；Gety connector 名 Folder: 精选库`
+- 观察：`根路径 $CURATED_LIBRARY_ROOT；示例专题 example-topic/_index.md；Gety connector 名 Folder: 精选库`
 
 ## 四、日常流程
 
@@ -103,7 +103,9 @@ gety connector list
 硬链接示例（不占双倍空间，同盘符）：
 
 ```powershell
-New-Item -ItemType HardLink -Path "$CURATED_LIBRARY_ROOT\inbox\note-summary.md" -Target "$OBSIDIAN_VAULT\Yuque\your-yuque-repo\note-summary.md"
+New-Item -ItemType HardLink `
+  -Path "$env:CURATED_LIBRARY_ROOT/inbox/note-summary.md" `
+  -Target "$env:OBSIDIAN_VAULT/Yuque/your-repo/note-summary.md"
 ```
 
 ### 问 Agent 时：检索顺序
@@ -111,7 +113,7 @@ New-Item -ItemType HardLink -Path "$CURATED_LIBRARY_ROOT\inbox\note-summary.md" 
 ```
 1. Read {专题}/_index.md
 2. gety search "<query>" -c "Folder: 精选库"
-3. 不足再 gety search "<query>" -c "系统 (E:)" 等全盘
+3. 不足再 gety search "<query>" 全盘
 4. gety doc / Read 具体文件
 ```
 
@@ -161,4 +163,4 @@ New-Item -ItemType HardLink -Path "$CURATED_LIBRARY_ROOT\inbox\note-summary.md" 
 | [references/curated-index-template.md](../references/curated-index-template.md) | 专题 `_index` 模板 |
 | [references/nightly-template.md](../references/nightly-template.md) | 日复盘含 `## 精选库` |
 | [references/layers.md](../references/layers.md) | L2b/L3b 架构 |
-| [examples/curated-library-modian-sample.md](../examples/curated-library-modian-sample.md) | 模电索引样例 |
+| [examples/curated-library-modian-sample.md](../examples/curated-library-modian-sample.md) | 专题索引样例 |
