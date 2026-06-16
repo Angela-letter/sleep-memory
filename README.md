@@ -1,7 +1,7 @@
 # Sleep Memory · 睡眠记忆
 
 <p align="center">
-  <img src="docs/assets/architecture.svg" alt="Sleep Memory 四层架构：WAKE 在线推理与 SLEEP 离线巩固" width="820">
+  <img src="docs/assets/architecture.png" alt="Sleep Memory 四层架构：WAKE 在线推理与 SLEEP 离线巩固" width="820">
 </p>
 
 > **不用等模型内置「睡眠」，在系统层给 Agent 装上可检索的长期记忆。**

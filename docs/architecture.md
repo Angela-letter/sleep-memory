@@ -1,6 +1,6 @@
 # 四层架构详解
 
-![Sleep Memory 架构图](../assets/architecture.svg)
+![Sleep Memory 架构图](../assets/architecture.png)
 
 ## 设计原则
 
