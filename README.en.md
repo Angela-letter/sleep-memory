@@ -39,7 +39,7 @@ This project implements the same pattern at the **OS + notes + search + MCP** la
   <img src="docs/assets/en/01-pain-fix.png" alt="Common pain points and Sleep Memory fixes" width="800">
 </p>
 
-> Source: [docs/assets/mermaid/en/01-pain-fix.mmd](docs/assets/mermaid/en/01-pain-fix.mmd) · Regenerate: `powershell scripts/render-diagrams.ps1`
+> Illustrations: minimalist light-theme infographics (`docs/assets/en/`) · Structure refs in [docs/assets/mermaid/](docs/assets/mermaid/)
 
 | Symptom | Root cause | This framework |
 |---------|------------|----------------|
@@ -233,8 +233,8 @@ sleep-memory/
 │   ├── assets/
 │   │   ├── architecture.png          # hero diagram (zh)
 │   │   ├── architecture-en.png       # hero diagram (en)
-│   │   ├── zh/ en/                   # per-section PNGs
-│   │   └── mermaid/                  # .mmd sources + config
+│   │   ├── zh/ en/                   # minimalist light infographics
+│   │   └── mermaid/                  # structural .mmd refs (optional)
 │   ├── architecture.md
 │   ├── curated-library-workflow.md
 │   ├── nightly-pipeline.md

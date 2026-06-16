@@ -39,7 +39,7 @@
   <img src="docs/assets/zh/01-pain-fix.png" alt="常见痛点与 Sleep Memory 解法" width="800">
 </p>
 
-> 图源：[docs/assets/mermaid/zh/01-pain-fix.mmd](docs/assets/mermaid/zh/01-pain-fix.mmd) · 重新生成：`powershell scripts/render-diagrams.ps1`
+> 配图：简约亮色信息图（`docs/assets/zh/`）· 结构参考见 [docs/assets/mermaid/](docs/assets/mermaid/)
 
 | 现象 | 根因 | 本框架的解法 |
 |------|------|--------------|
@@ -233,8 +233,8 @@ sleep-memory/
 │   ├── assets/
 │   │   ├── architecture.png          # 主架构图（中文）
 │   │   ├── architecture-en.png       # 主架构图（英文）
-│   │   ├── zh/ en/                 # 各章节 PNG
-│   │   └── mermaid/                # 图源 .mmd + config
+│   │   ├── zh/ en/                 # 简约亮色信息图 PNG
+│   │   └── mermaid/                # 结构参考 .mmd（可选重渲）
 │   ├── architecture.md               # 分层详解 + context 预算
 │   ├── curated-library-workflow.md   # 精选库 × 检索 × nightly
 │   ├── nightly-pipeline.md           # 八步流水线
